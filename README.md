@@ -1,5 +1,5 @@
 # eufy-api
-Looking into the eufy android apk, I found references to different API calls and how to authenticate to eufy for different services.
+Looking into the eufy android apk, I found references to different API calls and how to authenticate to eufy for different services. 
 
 # Authentication
 
@@ -29,7 +29,7 @@ curl --location 'https://home-api.eufylife.com/v1/device/' \
 
 The python file [example.py](example.py) contains a class and methods to authenticate and pull information about devices.
 
-# API Calls
+# API Calls (from apk)
 
 Calls extracted from eufylife apk.
 
@@ -227,6 +227,43 @@ Calls extracted from eufylife apk.
 | PUT | reminder/{id} | updateReminder |
 | PUT | tuya/add_device | uploadTuyaDeivceInfo |
 | PUT | user/customer | createMember |
+
+
+# API calls (via HTTP toolkit on iPhone)
+
+I sniffed the "Eufy" app using HTTP toolkit, using my Eufy account that has two Eufy Floor Lamps E10.
+
+There seem to be multiple hosts involved. Here is a quick dump of my first try:
+
+* https://app-devicerelation-eu-pr.eufy.com/app/devicerelation/get_device_list
+* ttps://security-app-eu.eufylife.com/v3/commerce/get_current_subscription
+* https://care-app-eu.eufylife.com/v3/app/get_care_baby_devices
+* https://app-news-eu-pr.eufy.com/app/news/get_news_num
+* https://app-push-eu-pr.eufy.com/app/push/clear_count
+* https://app-passport-eu-pr.eufy.com/passport/get_user_param
+* https://mega-eu-pr.eufy.com/passport/get_user_param
+* https://app-house-eu-pr.eufy.com/app/house/get_devs_list
+* https://security-app-eu.eufylife.com/v3/app/commerce/get_available_services_ext
+* https://security-app-eu.eufylife.com/v3/commerce/get_current_subscription
+* https://mega-eu-pr.eufy.com/app/devicemanage/get_device_param_list
+* https://care-app-eu.eufylife.com/v3/app/get_care_baby_devices
+* https://app-devicerelation-eu-pr.eufy.com/app/devicerelation/get_device_list
+* https://mega-eu-pr.eufy.com/app/light/get/group
+* https://mega-eu-pr.eufy.com/app/light/get/group
+* https://mega-eu-pr.eufy.com/app/devicerelation/get_fitting_list
+* https://mega-eu-pr.eufy.com/app/light/get/group
+* https://mega-eu-pr.eufy.com/app/devicemanage/get_device_param_list
+* https://mega-eu-pr.eufy.com/app/devicerelation/get_fitting_list
+* https://care-app-eu.eufylife.com/v3/app/get_care_baby_devices
+* https://mega-eu-pr.eufy.com/app/ota/get_rom_versions
+* https://mega-eu-pr.eufy.com/app/devicerelation/batch_get_suit_list
+* https://app-house-eu-pr.eufy.com/app/house/get_house_invite_records
+* https://mega-eu-pr.eufy.com/app/light/aigc/recommend/list
+* https://mega-eu-pr.eufy.com/app/devicemanage/update_device_params
+* https://mega-eu-pr.eufy.com/app/devicemanage/get_device_param_list
+* https://mega-eu-pr.eufy.com/app/light/lighteffect/batchget
+* https://mega-eu-pr.eufy.com/app/light/update/group
+
 
 # Todo
 
