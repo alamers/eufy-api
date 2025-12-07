@@ -265,6 +265,20 @@ There seem to be multiple hosts involved. Here is a quick dump of my first try:
 * https://mega-eu-pr.eufy.com/app/light/update/group
 
 
+Responses seem to be encrypted:
+```
+{
+  "data": "FTm .... jFA=",
+  "code": 0,
+  "msg": "Geslaagd.",
+  "signature": "21f ... 5c5"
+}
+```
+Response headers indicate:
+```
+Encrypt-Algorithm: algorithm_ecdh
+```
+
 # Todo
 
 * Retrieve payloads for POST methods
